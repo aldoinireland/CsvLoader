@@ -36,7 +36,8 @@ mongoose.connection.on("open", function(err, conn) {
     });
 
     walker.on('end', function() {
-        for (var i = 0; i < files.length; i++) {
+        if(files.length > 0){
+                  for (var i = 0; i < files.length; i++) {
 
             var stream = fs.createReadStream(files[i]);
             currentFileName = filenames[i];
@@ -128,6 +129,10 @@ mongoose.connection.on("open", function(err, conn) {
                     });
                 });
 
+        }  
+        } else {
+            process.exit(0);
         }
+
     });
 });
