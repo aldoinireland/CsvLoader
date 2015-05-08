@@ -6,6 +6,7 @@ var uploadModel = new SchemaNow({
 	originalname: {type: String},
 	headers: {type: Object},
 	folder: {type: String},
+	inputtype: {type: String},
 	description: {type: String},
 	changes: {type: Object},
 	logdate: {type: Date}
